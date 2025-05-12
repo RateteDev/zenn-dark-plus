@@ -1,0 +1,180 @@
+/* ===========================
+/* ページ全体
+/* ===========================
+/* ページ全体の背景色を変更（コードブロック部分は除外） */
+.dark-mode-enabled body *:not(span):not(.code-block-exception):not(div.code-block-container *):not(div.code-block-container):not(aside.msg.message):not(aside.msg.message *):not(table):not(table *):not(span.zenn-embedded-mermaid):not(span.zenn-embedded-mermaid *) {
+    background: #121721 !important;
+    color: #e0e0e0f3 !important;
+}
+
+/* ===========================
+/* コードブロック
+/* ===========================
+/* コードブロックの枠線を変更 */
+.dark-mode-enabled pre {
+    border: 1.7px solid #fff !important;
+    border-radius: 9px !important;
+}
+
+/* コードブロックの背景色を変更 */
+.dark-mode-enabled div.code-block-container>div:last-of-type {
+    background: #25292e !important;
+}
+
+/* ===========================
+/* いいねとブックマークのスタイル
+/* ===========================
+/* いいねボタンとブックマークボタン共通の枠 */
+.dark-mode-enabled .LikeButton_button__ZwdG4,
+.dark-mode-enabled .BookmarkButton_bookmarkButton__tZ8rb {
+    border: 2px solid #82909b !important;
+    box-sizing: border-box;
+}
+
+/* いいねボタンアイコンの枠線 */
+.dark-mode-enabled .LikeButton_button__ZwdG4 .LikeButton_svgLikeLine__f9txR {
+    fill: none !important;
+    stroke: #82909b !important;
+    stroke-width: 10;
+}
+
+/* いいねを押してないときは中身を透明に */
+.dark-mode-enabled .LikeButton_button__ZwdG4 .LikeButton_svgLikeInner__uiexS {
+    fill: none !important;
+    stroke: none !important;
+}
+
+/* いいねボタン 押下時に枠の色を変える*/
+.dark-mode-enabled .LikeButton_button__ZwdG4[data-pressed="true"] {
+    border-color: #f76685 !important;
+}
+
+/* いいねボタン 押下時の枠線の色 */
+.dark-mode-enabled .LikeButton_button__ZwdG4[data-pressed="true"] .LikeButton_svgLikeLine__f9txR {
+    stroke: #f76685 !important;
+}
+
+/* いいねボタン 押下時の中を塗りつぶす */
+.dark-mode-enabled .LikeButton_button__ZwdG4[data-pressed="true"] .LikeButton_svgLikeInner__uiexS {
+    fill: #f76685 !important;
+    stroke: #f76685 !important;
+}
+
+/* Bookmarkボタン 押下時に枠の色を変える */
+.dark-mode-enabled .BookmarkButton_bookmarkButton__tZ8rb[data-pressed="true"] {
+    border-color: #ffc107 !important;
+}
+
+/* Bookmarkボタン 押下時にアイコンの色を変える */
+.dark-mode-enabled .BookmarkButton_bookmarkButton__tZ8rb[data-pressed="true"] svg path {
+    fill: #ffc107 !important;
+}
+
+/* ===========================
+/* 注意コンポーネントのスタイル
+/* ===========================
+/* 注意メッセージの枠と色を変更 */
+.dark-mode-enabled aside.msg.message {
+    background: #fff8e1 !important;
+    border: 1.5px solid #ffffff !important;
+    color: #000 !important;
+}
+
+/* ===========================
+/* リストマーカーのスタイル
+/* ===========================
+/* リストマーカーの色を白に */
+.dark-mode-enabled ol li::marker,
+.dark-mode-enabled ul li::marker {
+    color: #fff !important;
+}
+
+/* ===========================
+/* 記事リストの絵文字アイコン枠線
+/* =========================== */
+.dark-mode-enabled [class^="ArticleList_emoji_"] {
+    border: 2.5px solid #ffffffad !important;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===========================
+/* ユーザーページのスクロールエリアの文字色
+/* =========================== */
+.dark-mode-enabled .HorizontalScrollContainer_scrollArea__WFBZq {
+    color: #fff !important;
+}
+
+/* ===========================
+/* ユーザーページ
+/* =========================== */
+/* 文字色を白に */
+.dark-mode-enabled .UserHeader_profile__KVl88,
+.dark-mode-enabled .UserHeader_profile__KVl88 * {
+    color: #fff !important;
+}
+
+.dark-mode-enabled article.ArticleCard_container__duCK7 {
+    border: 2px solid #ffffffd2 !important;
+    border-radius: 6px !important;
+}
+
+/* ===========================
+/* テーブルの背景色
+/* ===========================
+/* 見出しの背景色 */
+.dark-mode-enabled table th {
+    background: #364151 !important;
+}
+
+/* データ行の背景色 */
+.dark-mode-enabled table td {
+    background: #1c2431 !important;
+}
+
+/* ===========================
+/* マーメイドの埋め込み
+/* ===========================
+/* マーメイド部分だけ背景色を白に */
+.dark-mode-enabled span.zenn-embedded-mermaid {
+    background-color: #fffffffa !important;
+}
+
+/* ===========================
+/* アバター画像
+/* ===========================
+/* アバター画像の境界線を太くしてギザつきを抑制 */
+.dark-mode-enabled .AvatarImage_border__pDIjF {
+    border: 2px solid #ffffffd2 !important; /* 既存のカード枠線に合わせた太さと色 */
+}
+
+/* ===========================
+/* タグ要素
+/* ===========================
+/* タグ要素の縁取りが切れる問題の対策 */
+.dark-mode-enabled .View_topicLink__jdtX_ {
+    position: relative;
+    border: 0px !important;
+}
+
+.dark-mode-enabled .View_topicLink__jdtX_::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid #ffffffd2;
+    border-radius: 13px;
+    pointer-events: none;
+    z-index: 2;
+    /* 画像より上に */
+}
+
+/* ===========================
+/* バッジを送るボタン
+/* ===========================
+/* バッジを送るボタンの縁取り */
+.dark-mode-enabled .Button_primary__VcoA9 {
+    border: 2px solid #ffffffd2 !important;
+}

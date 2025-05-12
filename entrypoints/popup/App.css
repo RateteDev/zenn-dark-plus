@@ -1,42 +1,119 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background: #22272e;
+  color: #adbac7;
+  font-family: 'Segoe UI', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #2d333b;
+  border-radius: 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  padding: 32px 28px 24px 28px;
+  min-width: 320px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-title {
+  color: #adbac7;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+
+.popup-label {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  color: #adbac7;
+  background: #22272e;
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  border: 1.5px solid #444c56;
+  transition: border 0.2s, background 0.2s;
+}
+.popup-label.active {
+  border: 1.5px solid #539bf5;
+  background: #22272e;
+}
+.popup-checkbox {
+  margin-right: 10px;
+  accent-color: #539bf5;
+  width: 18px;
+  height: 18px;
+}
+.theme-status {
+  font-size: 1rem;
+  color: #768390;
+  margin-bottom: 18px;
+}
+.popup-links {
+  display: block;
+  margin-top: 10px;
+}
+.popup-links span {
+  display: block;
+  margin-bottom: 6px;
+}
+.popup-links a {
+  color: #539bf5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.popup-links a:hover {
+  color: #316dca;
+  text-decoration: underline;
+}
+.loading-text {
+  color: #768390;
+  font-size: 1.1rem;
   text-align: center;
+  margin: 40px 0;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.popup-meta {
+  margin-top: 18px;
+  font-size: 0.93rem;
+  color: #768390;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #54bc4ae0);
+.popup-version {
+  margin-bottom: 2px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.popup-license a {
+  color: #768390;
+  text-decoration: underline;
+  font-size: 0.93rem;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popup-license a:hover {
+  color: #539bf5;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.store-links {
+  display: inline-flex;
+  gap: 10px;
+  margin-left: 8px;
 }
-
-.card {
-  padding: 2em;
+.store-links a {
+  color: #539bf5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
 }
-
-.read-the-docs {
-  color: #888;
+.store-links a:hover {
+  color: #316dca;
+  text-decoration: underline;
 }
