@@ -23,6 +23,16 @@
 2. Zennのページを開くと自動でダークモードが適用されます
 3. 右上のトグルボタンやポップアップからテーマ設定を変更できます
 
+## 🖼️ 利用アセット・クレジット
+
+本プロジェクトでは、[SVG REPO](https://www.svgrepo.com)のSVGアセットを利用しています。
+
+- ダークモード切り替えアイコン(月): [Moon](https://www.svgrepo.com/svg/523562/moon) by SVG Repo, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- ダークモード切り替えアイコン(太陽): [Sun 2](https://www.svgrepo.com/svg/523849/sun-2) by SVG Repo, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- GitHubのロゴ: [Github](https://www.svgrepo.com/svg/521688/github) by SVG Repo, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- Chromeのロゴ: [Chrome](https://www.svgrepo.com/svg/496944/chrome) by SVG Repo, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- Firefoxのロゴ: [Firefox](https://www.svgrepo.com/svg/509113/firefox) by SVG Repo, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ## 🐞 不具合報告・要望
 - [GitHub Issues](https://github.com/placeholder/issues) からお気軽にどうぞ
 
