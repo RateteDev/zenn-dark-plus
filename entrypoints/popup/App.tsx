@@ -19,13 +19,11 @@ const App = () => {
     const [useSystem, setUseSystem] = useState(false)
     const [useExtensionEnabled, setUseExtensionEnabled] = useState(true)
     const [loading, setLoading] = useState(true)
-    const [windowsSystemDark, setWindowsSystemDark] = useState(false)
 
     useEffect(() => {
         (async () => {
             setUseExtensionEnabled(await ExtensionEnabledSetting.get())
             setUseSystem(await UseSystemThemeSetting.get())
-            setWindowsSystemDark(UseSystemThemeSetting.isSystemDark())
             setLoading(false)
         })()
     }, [])
@@ -67,29 +65,28 @@ const App = () => {
                 />
                 OSのテーマ設定に従う
             </label>
-            <p className="theme-status">現在のOSのテーマ: {windowsSystemDark ? "ダーク" : "ライト"}</p>
             <div className="popup-links">
-                <span>
-                    <span className="icon-svg icon-svg-stroke" dangerouslySetInnerHTML={{ __html: chromeIcon }} />
-                    Chrome Web Store: <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer">Chrome</a>
-                </span>
-                <span>
-                    <span className="icon-svg icon-svg-fill" dangerouslySetInnerHTML={{ __html: firefoxIcon }} />
-                    Firefox Addons: <a href={FIREFOX_STORE_URL} target="_blank" rel="noopener noreferrer">Firefox</a>
-                </span>
-                <span>
-                    <span className="icon-svg icon-svg-fill" dangerouslySetInnerHTML={{ __html: githubIcon }} />
-                    GitHub: <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">RateteDev/zenn-dark-plus</a>
-                </span>
-                <span>
-                    不具合報告: <a href={ISSUE_URL} target="_blank" rel="noopener noreferrer">GitHub Issues</a>
-                </span>
+                <div className="popup-links-title">Links</div>
+                <div className="popup-links-icons">
+                    <a className="popup-link-anchor" href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer">
+                        <span className="icon-svg icon-svg-stroke" dangerouslySetInnerHTML={{ __html: chromeIcon }} />
+                        <span className="popup-link-label">Chrome</span>
+                    </a>
+                    <a className="popup-link-anchor" href={FIREFOX_STORE_URL} target="_blank" rel="noopener noreferrer">
+                        <span className="icon-svg icon-svg-fill" dangerouslySetInnerHTML={{ __html: firefoxIcon }} />
+                        <span className="popup-link-label">Firefox</span>
+                    </a>
+                    <a className="popup-link-anchor" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                        <span className="icon-svg icon-svg-fill" dangerouslySetInnerHTML={{ __html: githubIcon }} />
+                        <span className="popup-link-label">GitHub</span>
+                    </a>
+                </div>
+            </div>
+            <div className="popup-link-report">
+                <a className="popup-link-report-anchor" href={ISSUE_URL} target="_blank" rel="noopener noreferrer">🔧 不具合報告</a>
+                <span className="popup-version-bottom">v{EXT_VERSION}</span>
             </div>
             <div className="popup-meta">
-                <span className="popup-version">バージョン: {EXT_VERSION}</span>
-                <span className="popup-license">
-                    <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer">{LICENSE_NAME} License</a>
-                </span>
             </div>
         </div>
     )

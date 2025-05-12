@@ -1,3 +1,4 @@
+/* ===== ベースレイアウト ===== */
 body {
   background: #22272e;
   color: #adbac7;
@@ -12,7 +13,6 @@ body {
 
 .container {
   background: #2d333b;
-  border-radius: 0;
   box-shadow: 0 2px 16px rgba(0,0,0,0.18);
   padding: 32px 28px 24px 28px;
   min-width: 320px;
@@ -22,18 +22,20 @@ body {
   align-items: center;
 }
 
+/* ===== タイトル ===== */
 .popup-title {
   color: #adbac7;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 24px;
   letter-spacing: 0.01em;
 }
 
+/* ===== トグルボタン ===== */
 .popup-label {
   display: flex;
   align-items: center;
-  font-size: 1.08rem;
+  font-size: 0.92rem;
   color: #adbac7;
   background: #22272e;
   border-radius: 6px;
@@ -42,6 +44,8 @@ body {
   cursor: pointer;
   border: 1.5px solid #444c56;
   transition: border 0.2s, background 0.2s;
+  min-width: 220px;
+  justify-content: flex-start;
 }
 .popup-label.active {
   border: 1.5px solid #539bf5;
@@ -53,70 +57,42 @@ body {
   width: 18px;
   height: 18px;
 }
-.theme-status {
-  font-size: 1rem;
-  color: #768390;
-  margin-bottom: 18px;
-}
+
+/* ===== リンク集 ===== */
 .popup-links {
   display: block;
   margin-top: 10px;
 }
-.popup-links span {
-  display: block;
-  margin-bottom: 6px;
-}
-.popup-links a {
-  color: #539bf5;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.popup-links a:hover {
-  color: #316dca;
-  text-decoration: underline;
-}
-.loading-text {
-  color: #768390;
-  font-size: 1.1rem;
+.popup-links-title {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #adbac7;
+  margin-bottom: 10px;
   text-align: center;
-  margin: 40px 0;
 }
-.popup-meta {
-  margin-top: 18px;
-  font-size: 0.93rem;
-  color: #768390;
+.popup-links-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.popup-link-anchor {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-}
-.popup-version {
-  margin-bottom: 2px;
-}
-.popup-license a {
-  color: #768390;
-  text-decoration: underline;
-  font-size: 0.93rem;
-}
-.popup-license a:hover {
-  color: #539bf5;
-}
-.store-links {
-  display: inline-flex;
-  gap: 10px;
-  margin-left: 8px;
-}
-.store-links a {
-  color: #539bf5;
+  gap: 4px;
+  min-width: 90px;
+  padding: 8px 4px 4px 4px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+  color: #539bf5;
+  transition: background 0.18s;
 }
-.store-links a:hover {
-  color: #316dca;
-  text-decoration: underline;
+.popup-link-anchor:hover {
+  background: #22272e;
 }
+
+/* ===== アイコンSVG ===== */
 .icon-svg svg {
   width: 26px;
   height: 26px;
@@ -132,4 +108,39 @@ body {
 }
 .icon-svg-fill svg {
   fill: #111 !important;
+}
+
+/* ===== 不具合報告・バージョン ===== */
+.popup-link-report {
+  width: 100%;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+.popup-link-report-anchor {
+  color: #539bf5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.popup-link-report-anchor:hover {
+  color: #316dca;
+  text-decoration: underline;
+}
+.popup-version-bottom {
+  display: block;
+  color: #768390;
+  font-size: 1.08rem;
+  text-align: right;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ===== 補助・その他 ===== */
+.loading-text {
+  color: #768390;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 40px 0;
 }
