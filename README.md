@@ -29,5 +29,5 @@
 本プロジェクトは [GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.html) ライセンスで公開されています。
 
 ## 👤 作者・貢献
-- [GitHub](https://github.com/RateteDev/zenn-dark-plus)
+- [GitHub | RateteDev](https://github.com/RateteDev)
 - コントリビューション歓迎！
