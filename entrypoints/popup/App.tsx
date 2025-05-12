@@ -54,7 +54,7 @@ const App = () => {
                     Firefox Addons: <a href={FIREFOX_STORE_URL} target="_blank" rel="noopener noreferrer">Firefox</a>
                 </span>
                 <span>
-                    GitHub: <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">~~</a>
+                    GitHub: <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">RateteDev/zenn-dark-plus</a>
                 </span>
                 <span>
                     不具合報告: <a href={ISSUE_URL} target="_blank" rel="noopener noreferrer">GitHub Issues</a>
