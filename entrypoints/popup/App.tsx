@@ -11,6 +11,9 @@ import {
     ISSUE_URL
 } from "../utils/define"
 import "./App.css"
+import chromeIcon from "../assets/chrome.svg?raw"
+import firefoxIcon from "../assets/firefox.svg?raw"
+import githubIcon from "../assets/github.svg?raw"
 
 const App = () => {
     const [useSystem, setUseSystem] = useState(false)
@@ -67,12 +70,15 @@ const App = () => {
             <p className="theme-status">現在のOSのテーマ: {windowsSystemDark ? "ダーク" : "ライト"}</p>
             <div className="popup-links">
                 <span>
+                    <span className="icon-svg icon-svg-stroke" dangerouslySetInnerHTML={{ __html: chromeIcon }} />
                     Chrome Web Store: <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer">Chrome</a>
                 </span>
                 <span>
+                    <span className="icon-svg icon-svg-fill" dangerouslySetInnerHTML={{ __html: firefoxIcon }} />
                     Firefox Addons: <a href={FIREFOX_STORE_URL} target="_blank" rel="noopener noreferrer">Firefox</a>
                 </span>
                 <span>
+                    <span className="icon-svg icon-svg-fill" dangerouslySetInnerHTML={{ __html: githubIcon }} />
                     GitHub: <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">RateteDev/zenn-dark-plus</a>
                 </span>
                 <span>
