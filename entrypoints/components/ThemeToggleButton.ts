@@ -47,21 +47,11 @@ export class ThemeToggleButton {
     }
 
     public appendToPage(): void {
-        const targetContainer = document.querySelector(this.targetContainerSelector);
-        if (targetContainer) {
-            targetContainer.appendChild(this.buttonElement);
-            console.log("Dark mode toggle button with SVG icon added to header actions.");
-        } else {
-            console.warn(`Target container '${this.targetContainerSelector}' not found. Appending button to body (fallback).`);
-            const style = this.buttonElement.style;
-            style.position = "fixed";
-            style.top = "10px";
-            style.right = "10px";
-            style.zIndex = "9999";
-            style.padding = "5px";
-            style.border = "none";
-            style.background = "white";
-            document.body.prepend(this.buttonElement);
+        // 共通のアクションエリアをターゲット
+        const commonActionsArea = document.querySelector("div.AppHeader_actionsArea__3VI_s");
+        if (commonActionsArea) {
+            commonActionsArea.appendChild(this.buttonElement);
         }
+        // fallbackは廃止
     }
 }
