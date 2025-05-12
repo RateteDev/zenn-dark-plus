@@ -2,9 +2,15 @@ import { DarkModeManager } from "../modules/DarkModeManager"
 import { UseSystemThemeSetting } from "../modules/UseSystemThemeSetting"
 import { ThemeToggleButton } from "../components/ThemeToggleButton"
 import { LOCAL_STORAGE_KEY } from "../utils/define"
+import { ExtensionEnabledSetting } from "../modules/ExtensionEnabledSetting"
 
 const mainZenn = async () => {
-    console.log("Zenn Dark Mode script loaded。");
+    // 拡張機能ON/OFF状態を確認
+    const enabled = await ExtensionEnabledSetting.get();
+    if (!enabled) {
+        // OFFなら何もせずreturn
+        return;
+    }
 
     // ダークモードの管理
     const darkModeManager = new DarkModeManager();
@@ -48,7 +54,11 @@ import "./style.css"
 export default defineContentScript({
     matches: ['*://*.zenn.dev/**'],
     main(ctx) {
-        console.log("Zenn Dark Mode script loaded。");
+        // 拡張機能ON/OFF状態の監視
+        ExtensionEnabledSetting.watch((enabled) => {
+            // ON/OFF切り替え時はページリロード
+            location.reload();
+        });
         if (document.readyState === "loading") {
             document.addEventListener("DOMContentLoaded", mainZenn);
         } else {

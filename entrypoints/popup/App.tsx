@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { UseSystemThemeSetting } from "../modules/UseSystemThemeSetting"
+import { ExtensionEnabledSetting } from "../modules/ExtensionEnabledSetting"
 import {
     EXT_VERSION,
     LICENSE_NAME,
@@ -13,16 +14,24 @@ import "./App.css"
 
 const App = () => {
     const [useSystem, setUseSystem] = useState(false)
+    const [useExtensionEnabled, setUseExtensionEnabled] = useState(true)
     const [loading, setLoading] = useState(true)
     const [windowsSystemDark, setWindowsSystemDark] = useState(false)
 
     useEffect(() => {
         (async () => {
+            setUseExtensionEnabled(await ExtensionEnabledSetting.get())
             setUseSystem(await UseSystemThemeSetting.get())
             setWindowsSystemDark(UseSystemThemeSetting.isSystemDark())
             setLoading(false)
         })()
     }, [])
+
+    const handleExtensionToggle = async () => {
+        const newValue = !useExtensionEnabled
+        setUseExtensionEnabled(newValue)
+        await ExtensionEnabledSetting.set(newValue)
+    }
 
     const handleSystemToggle = async () => {
         const newValue = !useSystem
@@ -36,12 +45,22 @@ const App = () => {
     return (
         <div className="container">
             <h1 className="popup-title">Zenn Dark+</h1>
+            <label className={useExtensionEnabled ? "popup-label active" : "popup-label"}>
+                <input
+                    type="checkbox"
+                    checked={useExtensionEnabled}
+                    onChange={handleExtensionToggle}
+                    className="popup-checkbox"
+                />
+                拡張機能を有効化
+            </label>
             <label className={useSystem ? "popup-label active" : "popup-label"}>
                 <input
                     type="checkbox"
                     checked={useSystem}
                     onChange={handleSystemToggle}
                     className="popup-checkbox"
+                    disabled={!useExtensionEnabled}
                 />
                 OSのテーマ設定に従う
             </label>

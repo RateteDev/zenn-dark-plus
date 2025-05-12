@@ -15,6 +15,7 @@
 │   ├── popup/        # ポップアップUI（React）
 │   ├── zenn.content/ # Zenn本体へのContentScript
 │   ├── modules/      # 共通ロジック・設定管理
+│   │   └── ExtensionEnabledSetting.ts # 拡張機能ON/OFF状態管理
 │   └── components/   # UI部品
 ├── public/           # 公開用静的ファイル
 ├── package.json      # 依存・スクリプト管理
@@ -41,3 +42,4 @@
 ## 💡 補足
 - 依存パッケージやバージョンは`bun pm ls`や`package.json`を参照
 - 詳細な仕様や設計は`docs/dark_mode_spec.md`も参照
+- `ExtensionEnabledSetting.ts`で拡張機能自体のON/OFF状態を管理できます。OFF時はZennページで一切の操作を行いません。ON/OFF切り替えはポップアップUIから可能で、全タブに即時反映されます。
