@@ -12,6 +12,9 @@ export class DarkModeSetting {
      */
     static async get(): Promise<boolean> {
         const value = await storage.getItem<boolean>(STORAGE_KEY);
+        if (value === null || value === undefined) {
+            return true; // デフォルトはDark
+        }
         return value === true;
     }
 
