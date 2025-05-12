@@ -1,7 +1,7 @@
 {
     "name": "zenn-dark-plus",
     "displayName": "Zenn Dark+",
-    "description": "『Zenn Dark+』は、技術記事投稿サイト「Zenn」にダークモード切り替え機能を追加するブラウザ拡張です。",
+    "description": "『Zenn Dark+』は、技術記事投稿サイト「Zenn」にダークモード切り替え機能を追加するブラウザ拡張です",
     "private": true,
     "version": "0.2.1",
     "type": "module",
