@@ -1,7 +1,6 @@
 # ✨ Zenn Dark+
 
 『Zenn Dark+』は、技術記事投稿サイト「Zenn」にダークモード切り替え機能を追加するブラウザ拡張です。
-![image](https://github.com/user-attachments/assets/4b70472e-63a6-45de-894d-632bd72cb45e)
 
 Zenn公式がダークモード対応したためアーカイブ
 
